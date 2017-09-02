@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Home from './Home';
+import Freelance from './Freelance';
+import OpenSource from './OpenSource';
+import Projects from './Projects';
+import Blog from './Blog';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      content: "Home",
+      pages: {"Home":<Home />, "Freelance":<Freelance />, "Open Source":<OpenSource />, "Side Projects":<Projects />, "Blog":<Blog /> }
+    };
+  }
   render() {
     return (
       <div className="App">
@@ -10,20 +21,18 @@ class App extends Component {
           <h1>Chris Larsen</h1>
           <nav>
             <ul className="navbar navbar-left">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Freelance Work</a></li>
-              <li><a href="#">Open Source Work</a></li>
-              <li><a href="#">Side Projects</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a>Home</a></li>
+              <li><a>Freelance Work</a></li>
+              <li><a>Open Source Work</a></li>
+              <li><a>Side Projects</a></li>
+              <li><a>Blog</a></li>
             </ul>
             <ul className="navbar navbar-right">
-              <li><a href="#">Sign In</a></li>
+              <li><a>Sign In</a></li>
             </ul>
           </nav>
         </div>
-        <section>
-          <p className="Content">{"I'm Chris Larsen, a freelance web developer, electronics technologist, rubyist, and general technology fanatic."}</p>
-        </section>
+        <Home />
       </div>
     );
   }
