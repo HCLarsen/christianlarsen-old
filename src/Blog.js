@@ -4,7 +4,7 @@ class Blog extends Component {
   render() {
     return(
       <section>
-        <p>Under Construction</p>
+        <p>Blog Is Under Construction</p>
       </section>
     );
   }
