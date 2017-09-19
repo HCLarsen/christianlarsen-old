@@ -27,10 +27,35 @@ nav {
   float:right;
 }
 
-li > a {
+.navbar > li > a {
   padding: 15px;
 
   color: white;
   font-weight: bold;
   text-decoration: none;
+}
+
+.title-bar {
+  width: 100%;
+  display: inline-block;
+}
+
+.title {
+  float: left;
+  font-size: 2rem;
+}
+
+.contact-info {
+  margin-right: 10px;
+  float: right;
+}
+
+ul.contact-info {
+  list-style-type: none;
+}
+
+.content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;  
 }
