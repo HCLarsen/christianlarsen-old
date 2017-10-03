@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Project extends Component {
   render() {
     return(
-      <div className="content">
-        <dt>{this.props.name}</dt>
-        <dd>{this.props.description}</dd>
+      <div className="project">
+        <dt className="project-name"><a href={this.props.url} target="_blank" rel="noopener noreferrer">{this.props.name}</a></dt>
+        <dd className="project-description">{this.props.description}</dd>
       </div>
     );
   }

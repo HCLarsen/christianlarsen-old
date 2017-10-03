@@ -57,5 +57,15 @@ ul.contact-info {
 .content {
   width: 90%;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
+}
+
+dt.project-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+dd.project-description {
+  margin-left: 0px;
 }
