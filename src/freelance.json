@@ -1,0 +1,5 @@
+[{
+   "name": "Electric Star Productions",
+   "url": "https://www.electricstarproductions.ca/",
+   "description": "Electric Star Productions is a DJ and Events company in Toronto. They wanted a website with editable information about their DJs. I used ReactJS on the front end, to provide smooth transition between the standard view and the forms that enable editing. The back end uses Ruby on Rails to store the content in a PostgreSQL Database."
+}]
