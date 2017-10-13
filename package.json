@@ -2,9 +2,11 @@
   "name": "christianlarsen",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://www.christianlarsen.ca",
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-markdown": "^2.5.0",
     "react-scripts": "^1.0.14"
   },
   "scripts": {
