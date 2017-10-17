@@ -1,37 +1,35 @@
 import React, { Component } from 'react'
-import Client from "./Client"
+import Client from './IndexFetch'
 
 class BlogIndex extends Component {
   state = {
-    posts: []
+    index: {}
   }
   fetchIndex() {
-    console.log("Fetching")
     Client.search(posts => {
-      this.setState({ posts: posts });
-      console.log(this.state.posts)
+      let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+      var index = {}
+      var data = posts.reverse()
+      data.forEach(function(item) {
+        var date = new Date(item.date)
+        var year = date.getFullYear()
+        var month = date.getMonth()
+        if (index[year] == null) {
+          index[year] = {}
+        }
+        if (index[year][months[month]] == null) {
+          index[year][months[month]] = []
+        }
+        index[year][months[month]].push(item)
+      })
+      this.setState({ index: index })
     });
   }
   componentWillMount() {
     this.fetchIndex()
   }
   render() {
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
-    var index = {}
-    var data = this.state.posts.reverse()
-    data.forEach(function(item) {
-      var date = new Date(item.date)
-      var year = date.getFullYear()
-      var month = date.getMonth()
-      if (index[year] == null) {
-        index[year] = {}
-      }
-      if (index[year][months[month]] == null) {
-        index[year][months[month]] = []
-      }
-      index[year][months[month]].push(item)
-    })
-
+    var index = this.state.index
     var list = []
     for (var year in index) {
       var month_list = []
@@ -47,7 +45,7 @@ class BlogIndex extends Component {
     list = list.reverse()
     return(
       <aside className="blog-sidebar">
-        <h2>Archives</h2>
+        <h3>Archives</h3>
         <ul className="year-list">
           {list}
         </ul>

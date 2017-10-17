@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
-import Markdown from 'react-remarkable'
+import BlogContent from './BlogContent'
 import BlogIndex from './BlogIndex'
 
-var input = '# This is a header\n\nAnd this is a paragraph';
-
 class Blog extends Component {
+  state = {
+    blogID: 1
+  }
   render() {
     return(
       <section className="content">
-        <article className="blog-content">
-          <Markdown source={input} />
-        </article>
+        <BlogContent id={this.state.blogID} />
         <BlogIndex />
       </section>
     );
