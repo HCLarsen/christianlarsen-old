@@ -8,6 +8,6 @@
   width: 30%;
 }
 
-.year-list, .month-list, .post-list {
+.year-list, .month-list {
   list-style-type: none;
 }

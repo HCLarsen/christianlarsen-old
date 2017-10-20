@@ -3,21 +3,11 @@ import Home from './Home';
 import Freelance from './Freelance';
 import OpenSource from './OpenSource';
 import Projects from './Projects';
-import Blog from './Blog';
+import Blog from './blog/Blog';
 import './App.css';
+import { Link, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      pages: {"Home":<Home />, "Freelance Work":<Freelance />, "Open Source":<OpenSource />, "Side Projects":<Projects />, "Blog":<Blog /> },
-      activeView: <Home />
-    };
-  }
-  handleChangeView(e) {
-    e.preventDefault();
-    this.setState({ activeView: this.state.pages[e.target.text] });
-  }
   render() {
     return (
       <div className="App">
@@ -38,11 +28,11 @@ class App extends Component {
           </div>
           <nav>
             <ul className="navbar navbar-left">
-              <li><a href="home" onClick={ this.handleChangeView.bind(this) }>Home</a></li>
-              <li><a href="freelance" onClick={ this.handleChangeView.bind(this) }>Freelance Work</a></li>
-              <li><a href="openSource" onClick={ this.handleChangeView.bind(this) }>Open Source</a></li>
-              <li><a href="projects" onClick={ this.handleChangeView.bind(this) }>Side Projects</a></li>
-              <li><a href="blog" onClick={ this.handleChangeView.bind(this) }>Blog</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/freelance">Freelance Work</Link></li>
+              <li><Link to="/openSource">Open Source</Link></li>
+              <li><Link to="/projects">Side Projects</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
             </ul>
             <ul className="navbar navbar-right">
               <li><a>Sign In</a></li>
@@ -50,7 +40,13 @@ class App extends Component {
           </nav>
         </div>
         <div className="content-container">
-          {this.state.activeView}
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/freelance" component={Freelance} />
+            <Route path="/opensource" component={OpenSource} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/blog" component={Blog} />
+          </Switch>
         </div>
       </div>
     );

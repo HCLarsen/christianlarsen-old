@@ -23,6 +23,8 @@ class BlogContent extends Component {
     this.fetchBlog(this.props.id)
   }
   render() {
+    console.log("Blog Content Rendering")
+    console.log(this.props.id)
     return(
       <article className="blog-content">
         <h1>{this.state.title}</h1>

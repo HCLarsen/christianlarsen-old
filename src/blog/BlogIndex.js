@@ -25,6 +25,9 @@ class BlogIndex extends Component {
       this.setState({ index: index })
     });
   }
+  handleChangeBlog(e) {
+    this.props.handleChangeBlog(e.target.dataset.id)
+  }
   componentWillMount() {
     this.fetchIndex()
   }
@@ -36,8 +39,8 @@ class BlogIndex extends Component {
       for (var month in index[year]) {
         var post_list = []
         index[year][month].forEach(function(post) {
-          post_list.push(<li key={post.id}>{post.title}</li>)
-        })
+          post_list.push(<li key={post.id}><a href="#" onClick={ this.handleChangeBlog.bind(this) } data-id={post.id} >{post.title}</a></li>)
+        }.bind(this))
         month_list.push(<li key={month}>{month}<ul className="post-list">{post_list}</ul></li>)
       }
       list.push(<li key={year}>{year}<ul className="month-list">{month_list}</ul></li>)
