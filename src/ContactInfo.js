@@ -7,6 +7,7 @@ class ContactInfo extends Component {
         <ul className="contact-info">
           <li><a href="https://www.linkedin.com/in/chris-larsen-58347214/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://github.com/HCLarsen" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://medium.com/@clarsen_56120" target="_blank" rel="noopener noreferrer">Medium</a></li>          
         </ul>
         <ul className="contact-info">
           <li><a href="https://www.hackerrank.com/HCLarsen" target="_blank" rel="noopener noreferrer">HackerRank</a></li>
