@@ -8,10 +8,10 @@ const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
     return response.json()
   }
-  const error = new Error(`HTTP Error ${response.statusText}`)
+  const error = new Error(`HTTP Error ${response.statusText} ${response.url}`)
   error.status = response.statusText
   error.response = response
-  console.log(response.status)
+  console.log(response.status + response.url)
   console.log(error)
   throw error
 }
