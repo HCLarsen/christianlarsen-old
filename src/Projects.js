@@ -8,7 +8,7 @@ class Projects extends Component {
     });
     return(
       <section className="content">
-        <p>These is a list of software that I have created on my own.</p>
+        <p>This is a list of software that I've created on my own.</p>
         <dl>
           {projects}
         </dl>
