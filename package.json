@@ -4,7 +4,7 @@
   "private": true,
   "proxy": {
     "/users": {
-      "target": "https://api.github.com",
+      "target": "https://api.github.com"
       }
     }
   },
