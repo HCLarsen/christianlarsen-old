@@ -1,4 +1,9 @@
 {
   "root": "build/",
-  "https_only": true
+  "https_only": true,
+  "proxies": {
+    "/users/": {
+      "origin": "https://api.github.com"
+    }
+  }
 }
