@@ -3,7 +3,7 @@
   "https_only": true,
   "proxies": {
     "/users/": {
-      "origin": "https://api.github.com"
+      "target": "https://api.github.com"
     }
   }
 }
