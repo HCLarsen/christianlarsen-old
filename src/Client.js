@@ -18,8 +18,3 @@ const checkStatus = (response) => {
 
 const Client = { search }
 export default Client
-
-//Proxy error: Could not proxy request /users/HCLarsen/repos?sort=updated from localhost:3000 to https://api.github.com.
-//See https://nodejs.org/api/errors.html#errors_common_system_errors for more information (undefined).
-
-//[HPM] Error occurred while trying to proxy request /users/HCLarsen/repos?sort=updated from localhost:3000 to //https://api.github.com (undefined) (https://nodejs.org/api/errors.html#errors_common_system_errors)
