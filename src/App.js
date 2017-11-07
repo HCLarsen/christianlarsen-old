@@ -23,14 +23,13 @@ class App extends Component {
         return !repo.fork && repo.stargazers_count > 0
       }).slice(0, ORIGINAL_LIMIT)
       var contributions = repos.filter(function(repo) {
-        return repo.fork
+        console.log(repo)
+        return repo.fork  && repo.stargazers_count > 0
       }).slice(0, CONTRIBUTIONS_LIMIT)
       this.setState({
         projects: projects,
         contributions: contributions
       })
-      console.log(this.state.projects)
-      console.log(this.state.contributions)
     })
   }
   render() {
